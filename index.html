@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Curious Corner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+        <h2>Curious Corner</h2>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#blogs">Blogs</a>
+            <a href="#topics">Topics</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+
+    <!-- Home Section -->
+
+    <section id="home" class="hero">
+
+        <h1>Explore. Discover. Wonder.</h1>
+
+        <p>
+            Interesting facts, mysteries and ideas for curious minds.
+        </p>
+
+        <button onclick="goToBlogs()">
+            Start Exploring
+        </button>
+
+    </section>
+
+
+    <!-- Search Section -->
+
+    <section class="search-section">
+
+        <h2>What Are You Curious About?</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search for a topic..."
+            onkeyup="searchBlogs()"
+        >
+
+    </section>
+
+
+    <!-- Blog Section -->
+
+    <section id="blogs" class="blogs">
+
+        <h2>Latest Discoveries</h2>
+
+        <div class="blog-container">
+
+
+            <!-- Blog 1 -->
+
+            <div class="blog-card">
+
+                <h3>Why Do We Dream?</h3>
+
+                <p>
+                    Dreams are one of the most fascinating mysteries
+                    of the human brain.
+                </p>
+
+                <button onclick="readMore('dream')">
+                    Read More
+                </button>
+
+                <button class="like-btn" onclick="likeBlog(this)">
+                    ♥ <span>0</span>
+                </button>
+
+                <p id="dream" class="more-text">
+                    Scientists believe dreams may be connected to
+                    memory, emotions and information processing.
+                </p>
+
+            </div>
+
+
+            <!-- Blog 2 -->
+
+            <div class="blog-card">
+
+                <h3>The Mystery of Black Holes</h3>
+
+                <p>
+                    Black holes are regions of space where gravity
+                    is extremely powerful.
+                </p>
+
+                <button onclick="readMore('blackhole')">
+                    Read More
+                </button>
+
+                <button class="like-btn" onclick="likeBlog(this)">
+                    ♥ <span>0</span>
+                </button>
+
+                <p id="blackhole" class="more-text">
+                    Their gravity is so strong that even light cannot
+                    escape once it crosses the event horizon.
+                </p>
+
+            </div>
+
+
+            <!-- Blog 3 -->
+
+            <div class="blog-card">
+
+                <h3>How Does the Brain Learn?</h3>
+
+                <p>
+                    Our brain changes and creates connections when
+                    we learn something new.
+                </p>
+
+                <button onclick="readMore('brain')">
+                    Read More
+                </button>
+
+                <button class="like-btn" onclick="likeBlog(this)">
+                    ♥ <span>0</span>
+                </button>
+
+                <p id="brain" class="more-text">
+                    Learning strengthens connections between neurons.
+                    This process helps us remember information and skills.
+                </p>
+
+            </div>
+
+
+            <!-- Blog 4 -->
+
+            <div class="blog-card">
+
+                <h3>Why Is the Ocean Blue?</h3>
+
+                <p>
+                    Have you ever wondered why the ocean appears blue?
+                </p>
+
+                <button onclick="readMore('ocean')">
+                    Read More
+                </button>
+
+                <button class="like-btn" onclick="likeBlog(this)">
+                    ♥ <span>0</span>
+                </button>
+
+                <p id="ocean" class="more-text">
+                    Water absorbs many colors of light while blue
+                    light travels farther and is scattered back to our eyes.
+                </p>
+
+            </div>
+
+
+            <!-- Blog 5 -->
+
+            <div class="blog-card">
+
+                <h3>Why Do We Get Déjà Vu?</h3>
+
+                <p>
+                    Déjà vu is the strange feeling that you have
+                    experienced a moment before.
+                </p>
+
+                <button onclick="readMore('deja')">
+                    Read More
+                </button>
+
+                <button class="like-btn" onclick="likeBlog(this)">
+                    ♥ <span>0</span>
+                </button>
+
+                <p id="deja" class="more-text">
+                    Researchers believe déjà vu may happen when
+                    the brain processes a new experience in a way
+                    that feels familiar.
+                </p>
+
+            </div>
+
+
+            <!-- Blog 6 -->
+
+            <div class="blog-card">
+
+                <h3>Can Plants Communicate?</h3>
+
+                <p>
+                    Plants may communicate with each other using
+                    chemical signals and underground networks.
+                </p>
+
+                <button onclick="readMore('plants')">
+                    Read More
+                </button>
+
+                <button class="like-btn" onclick="likeBlog(this)">
+                    ♥ <span>0</span>
+                </button>
+
+                <p id="plants" class="more-text">
+                    Plants can release chemical signals and interact
+                    with fungi and other organisms around their roots.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Random Fact -->
+
+    <section class="fact-section">
+
+        <h2>💡 Random Fact</h2>
+
+        <p id="fact">
+            Click the button to discover something interesting!
+        </p>
+
+        <button onclick="newFact()">
+            Show Random Fact
+        </button>
+
+    </section>
+
+
+    <!-- Topics -->
+
+    <section id="topics" class="topics">
+
+        <h2>Explore Topics</h2>
+
+        <div class="topic-container">
+
+            <div class="topic-card" onclick="showTopic('Science')">
+                🔬
+                <h3>Science</h3>
+                <p>Discover how the world works.</p>
+            </div>
+
+            <div class="topic-card" onclick="showTopic('Technology')">
+                💻
+                <h3>Technology</h3>
+                <p>Explore inventions and innovation.</p>
+            </div>
+
+            <div class="topic-card" onclick="showTopic('Psychology')">
+                🧠
+                <h3>Psychology</h3>
+                <p>Understand the human mind.</p>
+            </div>
+
+            <div class="topic-card" onclick="showTopic('Space')">
+                🌌
+                <h3>Space</h3>
+                <p>Explore the mysteries of the universe.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section id="about" class="about">
+
+        <h2>About Curious Corner</h2>
+
+        <p>
+            Curious Corner is a simple blogging website created
+            for curious people who enjoy discovering new facts,
+            ideas and mysteries.
+        </p>
+
+        <p>
+            Our goal is simple:
+            <b>Ask questions. Explore ideas. Keep learning.</b>
+        </p>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section id="contact" class="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>Have a question or suggestion?</p>
+
+        <form onsubmit="submitForm(event)">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                id="message"
+                placeholder="Your Message"
+                rows="5"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h3>Curious Corner</h3>
+
+        <p>
+            Explore. Discover. Wonder.
+        </p>
+
+        <p>
+            © 2026 Curious Corner. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
